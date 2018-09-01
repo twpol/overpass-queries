@@ -47,6 +47,27 @@ out meta;
 out meta;
 ```
 
+### Light rail
+
+```overpass
+[out:xml][timeout:300][bbox:{{bbox}}];
+(
+  (
+    node["railway"="station"]["station"="light_rail"];
+    node["public_transport"="platform"]["light_rail"="yes"];
+    node["public_transport"="stop_position"]["light_rail"="yes"];
+  );
+  ._;<;
+  way["railway"="platform"];
+  way["building"="station"];
+  way["amenity"="shelter"];
+  node["amenity"="shelter"];
+  relation["route"="light_rail"];
+);
+(._;>;);
+out meta;
+```
+
 ### Subway
 
 ```overpass
