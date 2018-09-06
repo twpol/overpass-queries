@@ -54,6 +54,7 @@ out meta;
 (
   (
     node["railway"="station"]["station"="light_rail"];
+    node["railway"="station"]["light_rail"="yes"];
     node["public_transport"="platform"]["light_rail"="yes"];
     node["public_transport"="stop_position"]["light_rail"="yes"];
   );
@@ -75,6 +76,7 @@ out meta;
 (
   (
     node["railway"="station"]["station"="subway"];
+    node["railway"="station"]["subway"="yes"];
     node["public_transport"="platform"]["subway"="yes"];
     node["public_transport"="stop_position"]["subway"="yes"];
   );
@@ -95,7 +97,7 @@ out meta;
 [out:xml][timeout:300][bbox:{{bbox}}];
 (
   (
-    node["railway"~"station|halt|stop"][!"station"="subway"];
+    node["railway"~"station|halt|stop"][!"station"];
     node["public_transport"="platform"]["train"="yes"];
     node["public_transport"="stop_position"]["train"="yes"];
   );
