@@ -97,7 +97,7 @@ out meta;
 [out:xml][timeout:300][bbox:{{bbox}}];
 (
   (
-    node["railway"~"station|halt|stop"][!"station"];
+    node["railway"~"station|halt|stop"]["station"!="subway"];
     node["public_transport"="platform"]["train"="yes"];
     node["public_transport"="stop_position"]["train"="yes"];
   );
